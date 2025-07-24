@@ -1,0 +1,44 @@
+<!-- This is the combined HTML snippet based on your layout. I am only showing the part that needs to be added or modified -->
+
+<!-- Keep your existing Result Block -->
+<div id="quiz-result"> 
+  <!-- Your result content here -->
+</div>
+
+<!-- Keep your existing Register CTA Block -->
+<div class="register-block">
+  <button class="register-button">Register for Vitafoods Asia 2025</button>
+</div>
+
+<!-- Keep your existing Explore More Block -->
+<div class="explore-more">
+  <p>Ready to taste the future of functional wellness?</p>
+  <button class="explore-button">🍴 Take a bite into the future</button>
+</div>
+
+<!-- ✅ Insert this NEW block just above the final CTA buttons -->
+<div class="share-block" style="text-align: center; padding: 20px;">
+  <h3 style="color: #800000;"><span style="margin-right: 5px;">📢</span>Share Your Result!</h3>
+  <a id="fb-share" href="#" target="_blank" style="display: inline-block; margin: 10px; padding: 10px 20px; background-color: #1877f2; color: white; border-radius: 10px; text-decoration: none; font-weight: bold;">
+    <span style="margin-right: 5px;">📘</span>Share on Facebook
+  </a>
+  <a id="linkedin-share" href="#" target="_blank" style="display: inline-block; margin: 10px; padding: 10px 20px; background-color: #0a66c2; color: white; border-radius: 10px; text-decoration: none; font-weight: bold;">
+    <span style="margin-right: 5px;">💼</span>Share on LinkedIn
+  </a>
+</div>
+
+<!-- Keep your existing Take Quiz Again & Follow for More block -->
+<div class="final-cta">
+  <button>🔁 Take Quiz Again</button>
+  <button>📲 Follow for More</button>
+</div>
+
+<!-- 🔧 JavaScript to generate shareable links -->
+<script>
+  const resultText = document.getElementById("quiz-result")?.innerText || "I just took the Vitafoods Asia 2025 Zone Quiz!";
+  const pageUrl = window.location.href;
+  
+  document.getElementById("fb-share").href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}&quote=${encodeURIComponent(resultText + ' #VitafoodsAsia')}`;
+  
+  document.getElementById("linkedin-share").href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(pageUrl)}&summary=${encodeURIComponent(resultText + ' #VitafoodsAsia')}`;
+</script>
